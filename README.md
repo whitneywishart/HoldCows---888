@@ -4,7 +4,7 @@ A back-end app to handle e-commerce traffic using Sequelize.
 <br><br>
 
 ## Technologies and Installation
-Technologies used in development inclue the following;
+Technologies used in development include the following;
 - dotenv
 - Express.js
 - Insomnia
