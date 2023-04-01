@@ -1,4 +1,4 @@
-# e-Commerce Back End
+# eCommerce Back End
 ## Description
 A back-end app to handle e-commerce traffic using Sequelize. 
 <br><br>
