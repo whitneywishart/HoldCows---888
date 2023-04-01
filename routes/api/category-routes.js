@@ -34,23 +34,31 @@ router.get('/:id', (req, res) => {
 
 
 // POST route
+// create a new category
 router.post('/', (req, res) => {
-  // create a new category
-  router.post('/', (req, res) => {
-    Category.create(req.body)
-      .then((newCategory) => {
-        res.json(newCategory);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
+  Category.create(
+    {
+      category_name: req.body.category_name,
+    }
+  )
+    .then((newCategory) => {
+      // Send the newly created row as a JSON object
+      res.json(newCategory);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
+
+
 
 // PUT route
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
 });
+
+
+
 
 // DELETE route
 router.delete('/:id', (req, res) => {
