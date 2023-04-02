@@ -32,7 +32,6 @@ router.get('/:id', (req, res) => {
   });
 });
 
-
 // POST route
 // create a new category
 router.post('/', (req, res) => {
@@ -51,10 +50,23 @@ router.post('/', (req, res) => {
 });
 
 
-
 // PUT route
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  Category.update(
+    {
+      category_name: req.body.category_name,
+    },
+    {
+      where: {
+        category_id: req.params.id,
+      },
+    }
+  )
+    .then((updatedCategory) => {
+      res.json(updatedCategory);
+    })
+    .catch((err) => res.json(err));
 });
 
 
